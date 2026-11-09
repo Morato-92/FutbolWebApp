@@ -432,3 +432,10 @@ appsettings.local.json
 Data/DFConnId.ini
 *.local.cfg
 connection.local.cfg
+
+# Binarios / artefactos de compilación de DataFlex (se regeneran con Build; NO versionar)
+*.x64.dep
+*.x64.prn
+*.x64.cch
+Programs/*.exe
+Programs/*.dbg
