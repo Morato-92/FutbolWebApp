@@ -427,3 +427,8 @@ Release/
 connection.local.cfg
 appsettings.local.json
 *.local.ini
+
+# Conexión real con credenciales (NO versionar)
+Data/DFConnId.ini
+*.local.cfg
+connection.local.cfg
