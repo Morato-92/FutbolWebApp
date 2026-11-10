@@ -55,12 +55,19 @@ Object oDashboard is a cWebView
                 Set piColumnSpan to 6
                 Set psCSSClass to "Tile Light"
                 Set psHtml to '<div Class="WebCon_Sizer"><div class="Tile_Title">Welcome</div><div Class="Tile_Subtitle">--</div></div>'
+                Set pbServerOnClick to True
+
+                WebRegisterPath ntNavigateForward oSelectentrenador
     
                 Procedure OnLoad
                     Send UpdateHTML ('<div class="WebCon_Sizer">' + ;
                                      '<div class="Tile_Title">Welcome</div>' +;
                                      '<div class="Tile_Subtitle">' - htmlEncode(psUserName(ghoWebSessionManager)) - '</div>' +;
                                      '</div>')
+                End_Procedure
+
+                Procedure OnClick String sId String sParam
+                    Send NavigatePath
                 End_Procedure
                 
             End_Object
