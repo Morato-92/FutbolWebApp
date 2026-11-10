@@ -122,6 +122,20 @@ Object oDashboard is a cWebView
                 
             End_Object
         End_Object
+        
+    Object oTileJugador is a cWebHtmlBox
+    Set pbServerOnClick to True
+    Set piColumnSpan to 6
+    Set piColumnIndex to 0
+    Set psCSSClass to "Tile LightAlternate"
+    Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Jugadores</div><div class="Tile_Subtitle"></div></div>'
+
+    WebRegisterPath ntNavigateForward oSelectjugador
+
+    Procedure OnClick String sId String sParam
+        Send NavigatePath
+    End_Procedure
+    End_Object
     
     End_Object
     
