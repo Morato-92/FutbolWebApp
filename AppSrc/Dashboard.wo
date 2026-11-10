@@ -104,12 +104,14 @@ Object oDashboard is a cWebView
                 Set piColumnIndex to 6
                 Set psCSSClass to "Tile DarkAlternate"
                 Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Tile 4</div><div class="Tile_Subtitle"></div></div>'
-            
-                // WebRegisterPath ntNavigateForwardCustom oYourViewName
-                
+
+                WebRegisterPath ntNavigateForward oSelectequipo
+
                 Procedure OnClick String sId String sParam
                     Send NavigatePath
                 End_Procedure
+            
+                // WebRegisterPath ntNavigateForwardCustom oYourViewName
                 
             End_Object
         End_Object
