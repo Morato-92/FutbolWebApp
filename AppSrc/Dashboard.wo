@@ -57,7 +57,6 @@ Object oDashboard is a cWebView
                 Set psHtml to '<div Class="WebCon_Sizer"><div class="Tile_Title">Welcome</div><div Class="Tile_Subtitle">--</div></div>'
                 Set pbServerOnClick to True
 
-                WebRegisterPath ntNavigateForward oSelectentrenador
     
                 Procedure OnLoad
                     Send UpdateHTML ('<div class="WebCon_Sizer">' + ;
@@ -77,7 +76,7 @@ Object oDashboard is a cWebView
                 Set piColumnSpan to 6
                 Set piColumnIndex to 6
                 Set psCSSClass to "Tile LightAlternate"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Tile 2</div><div class="Tile_Subtitle"></div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Posiciones</div><div class="Tile_Subtitle">6 registros</div></div>'
 
                 WebRegisterPath ntNavigateForward oSelectposicion
 
@@ -93,7 +92,7 @@ Object oDashboard is a cWebView
                 Set pbServerOnClick to True
                 Set piColumnSpan to 6
                 Set psCSSClass to "Tile Dark"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Tile 3</div><div class="Tile_Subtitle"></div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Ligas</div><div class="Tile_Subtitle">2 registros</div></div>'
 
                 WebRegisterPath ntNavigateForward oSelectliga
 
@@ -110,7 +109,7 @@ Object oDashboard is a cWebView
                 Set piColumnSpan to 6
                 Set piColumnIndex to 6
                 Set psCSSClass to "Tile DarkAlternate"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Tile 4</div><div class="Tile_Subtitle"></div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Equipos</div><div class="Tile_Subtitle">6 registros</div></div>'
 
                 WebRegisterPath ntNavigateForward oSelectequipo
 
@@ -121,22 +120,36 @@ Object oDashboard is a cWebView
                 // WebRegisterPath ntNavigateForwardCustom oYourViewName
                 
             End_Object
+            
+            Object oTileJugador is a cWebHtmlBox
+                Set pbServerOnClick to True
+                Set piColumnSpan to 6
+                Set piColumnIndex to 0
+                Set psCSSClass to "Tile LightAlternate"
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Jugadores</div><div class="Tile_Subtitle">60 registros</div></div>'
+
+                WebRegisterPath ntNavigateForward oSelectjugador
+
+                Procedure OnClick String sId String sParam
+                    Send NavigatePath
+                End_Procedure
+            End_Object
+
+            Object oTileEntrenador is a cWebHtmlBox
+                Set pbServerOnClick to True
+                Set piColumnSpan to 6
+                Set piColumnIndex to 6
+                Set psCSSClass to "Tile Dark"
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle">7 registros</div></div>'
+
+                WebRegisterPath ntNavigateForward oSelectentrenador
+
+                Procedure OnClick String sId String sParam
+                    Send NavigatePath
+                End_Procedure
+            End_Object
+            
         End_Object
-        
-    Object oTileJugador is a cWebHtmlBox
-    Set pbServerOnClick to True
-    Set piColumnSpan to 6
-    Set piColumnIndex to 0
-    Set psCSSClass to "Tile LightAlternate"
-    Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Jugadores</div><div class="Tile_Subtitle"></div></div>'
-
-    WebRegisterPath ntNavigateForward oSelectjugador
-
-    Procedure OnClick String sId String sParam
-        Send NavigatePath
-    End_Procedure
-    End_Object
-    
     End_Object
     
     Procedure OnBeforeShow
