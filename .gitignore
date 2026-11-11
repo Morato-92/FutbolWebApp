@@ -399,3 +399,43 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Artefactos internos del IDE DataFlex (NO versionar)
+IdeSrc/
+*.loc
+*.lck
+*.tmp
+*.bak
+
+# Carpetas de compilación / salida
+bin/
+obj/
+Debug/
+Release/
+
+# Visual Studio / editor
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Archivos temporales y logs
+*.log
+*.cache
+
+# Configuraciones locales sensibles (contraseñas, etc.)
+connection.local.cfg
+appsettings.local.json
+*.local.ini
+
+# Conexión real con credenciales (NO versionar)
+Data/DFConnId.ini
+*.local.cfg
+connection.local.cfg
+
+# Binarios / artefactos de compilación de DataFlex (se regeneran con Build; NO versionar)
+*.x64.dep
+*.x64.prn
+*.x64.cch
+Programs/*.exe
+Programs/*.dbg
