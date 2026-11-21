@@ -70,7 +70,15 @@ Object oZoomliga is a cWebView
             Set piColumnIndex to 0
             Set piRowIndex to 4
         End_Object
+    Object oVerEquiposBtn is a cWebButton
+        Set psCaption to "Ver equipos de esta liga"
 
+        WebRegisterPath ntNavigateForward oSelectequipo
+
+        Procedure OnClick
+            Send NavigatePath
+        End_Procedure
+    End_Object
         WebSetResponsive piColumnCount rmMobile to 6
     End_Object
 
