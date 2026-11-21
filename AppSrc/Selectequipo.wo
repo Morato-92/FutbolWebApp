@@ -35,35 +35,48 @@ Object oSelectequipo is a cWebView
         Set psRowHeights to "0/1fr"
         Set piRowCount to 1
         
-        Object oList is a cWebList
-            Set pbFillHeight to True
-            Set piColumnSpan to 13
-            Set pbServerOnRowClick to True
-            Set psCSSClass to "MobileList"
-            Set piSortColumn to 0 // set this to allow for searching
-            Set pbShowHeader to False
-            Set piColumnIndex to 0
-            Set piRowIndex to 0
+    Object oList is a cWebList
+        Set pbFillHeight to True
+        Set piColumnSpan to 13
+        Set pbServerOnRowClick to True
+        Set psCSSClass to "MobileList"
+        Set piSortColumn to 0 // set this to allow for searching
+        Set pbShowHeader to False
+        Set piColumnIndex to 0
+        Set piRowIndex to 0
 
-            Object oequipo_ID is a cWebColumn
-                Entry_Item equipo.ID
-                Set psCaption to "ID"
-            End_Object
+        WebRegisterPath ntNavigateForward oZoomequipo
 
-            Object oequipo_Nombre is a cWebColumn
-                Entry_Item equipo.Nombre
-                Set psCaption to "Nombre"
-            End_Object
+        Procedure OnRowClick Integer iRow
+            tWebNavigateData NavigateData
+            Get NavigateData to NavigateData
+            Case Begin
+                Case (NavigateData.eNavigateType = nfFromChild)
+                    Send NavigateClose
+                Case Else
+                    Send NavigatePath
+            Case End
+        End_Procedure
 
-            Object oliga_ID is a cWebColumn
-                Entry_Item liga.ID
-                Set psCaption to "ID"
-            End_Object
+        Object oequipo_ID is a cWebColumn
+            Entry_Item equipo.ID
+            Set psCaption to "ID"
+        End_Object
 
-            Object oliga_Nombre is a cWebColumn
-                Entry_Item liga.Nombre
-                Set psCaption to "Nombre"
-            End_Object
+        Object oequipo_Nombre is a cWebColumn
+            Entry_Item equipo.Nombre
+            Set psCaption to "Nombre"
+        End_Object
+
+        Object oliga_ID is a cWebColumn
+            Entry_Item liga.ID
+            Set psCaption to "ID"
+        End_Object
+
+        Object oliga_Nombre is a cWebColumn
+            Entry_Item liga.Nombre
+            Set psCaption to "Nombre"
+        End_Object
     
             Object oDetailButton is a cWebColumnButton
                 Set piWidth to 45
